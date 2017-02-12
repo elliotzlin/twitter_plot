@@ -5,7 +5,7 @@
 /*
  * Your dashboard ViewModel code goes here
  */
-define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojchart'],
+define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojchart', 'ojs/ojthematicmap'],
  function(oj, ko, $) {
 
     function DashboardViewModel() {
@@ -84,6 +84,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojchart'],
       self.handleDetached = function(info) {
         // Implement if needed
       };
+
+      self.layers = [{layer: 'countries'}];
     }
 
     var dashboard = new DashboardViewModel()
