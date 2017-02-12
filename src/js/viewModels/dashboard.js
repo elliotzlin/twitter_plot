@@ -26,11 +26,12 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojchart', 'oj
       var getTrendsData = function() {
           var areaData = [];
           console.log(trend_data);
+          color_array = ["red", "green", "purple", "blue"];
           for (var i = 0; i < trend_data.length; i++) {
               var top = trend_data[i]["trends"][0]["name"];
               areaData.push(
                   { id: i.toString(),
-                    color: '#42C0FB',
+                    color: color_array[i % 4],
                     location: getCountryID(trend_data[i]["locations"][0]["name"]),
                     shortDesc: 'Top trending tweet - ' + top.toString()}
               );
