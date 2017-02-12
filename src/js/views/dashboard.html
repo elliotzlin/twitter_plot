@@ -4,26 +4,15 @@
  -->
 <div class="oj-hybrid-padding">
   <h3>Dashboard Content Area</h3>
-  <div id='sparkChart-container'>
-      <div title="Line Spark Chart<br>First Value: 5<br>Last Value: 2<br>Low Value: 0<br>High Value: 9" data-bind="ojComponent: {
-              component: 'ojSparkChart',
-              type: 'lineWithArea',
-              color: lineWithAreaColor,
-              items: sparkValues,
-              lineType: 'curved'
-          }"
-           style="max-width:160px;width:100%;height:40px;float:left;">
-      </div>
-  </div>
   <div id='thematicMap-container'>
     <div id='thematicMap1' data-bind="ojComponent:{
             component: 'ojThematicMap',
                 basemap: 'world',
-                areaLayers: layers
-        }" 
+                areaLayers: layers,
+                panning: 'auto',
+                zooming: 'auto'
+        }"
          style="height:500px;width:100%">
     </div>
   </div>
-
-
 </div>
