@@ -5,7 +5,7 @@
 /*
  * Your dashboard ViewModel code goes here
  */
-define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojchart', 'ojs/ojthematicmap'],
+define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojchart', 'ojs/ojthematicmap', 'promise', 'ojs/ojlistview'],
  function(oj, ko, $) {
     function DashboardViewModel() {
       var self = this;
@@ -41,6 +41,13 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojchart', 'oj
 
       self.layers = [{layer: 'countries', areaDataLayer: {id: 'adl1', areas: getTrendsData}}];
     }
+
+    $(document).ready(
+            function()
+            {
+                ko.applyBindings(null, document.getElementById('listview'));
+            }
+        );
 
     return new DashboardViewModel();
   }
